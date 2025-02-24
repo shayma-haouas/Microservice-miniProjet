@@ -17,10 +17,16 @@ public class GatewayApplication {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("candidat",
-                        r->r.path("/candidats/**")
-                        .uri("lb://candidat")).
-                build();
+                .route("university-management",
+                        r -> r.path("/universites/**")
+                                .uri("lb://UNIVERSITY-MANAGEMENT-MICROSERVICE")) // Nom du service dans Eureka
+                // Route pour le service Student Management
+                .route("student-management",
+                        r -> r.path("/api/auth/**") // Toutes les routes du microservice auth
+                                .uri("lb://STUDENT-MANAGEMENT-MICROSERVICE")) // LoadBalancer vers Eureka
+
+
+                .build();
      }
 
 }
