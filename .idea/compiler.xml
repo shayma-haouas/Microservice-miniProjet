@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -10,10 +11,30 @@
         <module name="gateway" />
         <module name="candidat" />
       </profile>
+      <profile name="Annotation profile for Room-Chambre-Management-Microservice" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="Foyer-Bloc-Management-Microservice" />
+        <module name="Room-Chambre-Management-Microservice" />
+        <module name="Reservation-Management-Microservice" />
+        <module name="Reclamation-Response-Management-Microservice" />
+        <module name="Student-Management-Microservice" />
+        <module name="University-Management-Microservice" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Foyer-Bloc-Management-Microservice" options="-parameters" />
+      <module name="Reclamation-Response-Management-Microservice" options="-parameters" />
+      <module name="Reservation-Management-Microservice" options="-parameters" />
+      <module name="Room-Chambre-Management-Microservice" options="-parameters" />
+      <module name="Student-Management-Microservice" options="-parameters" />
+      <module name="University-Management-Microservice" options="-parameters" />
       <module name="candidat" options="-parameters" />
       <module name="eureka" options="-parameters" />
       <module name="gateway" options="-parameters" />

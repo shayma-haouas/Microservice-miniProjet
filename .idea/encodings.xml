@@ -3,6 +3,12 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/backEnd/eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/backEnd/gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backEnd/microservices/Foyer-Bloc-Management-Microservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backEnd/microservices/Reclamation-Response-Management-Microservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backEnd/microservices/Reservation-Management-Microservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backEnd/microservices/Room-Chambre-Management-Microservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backEnd/microservices/Student-Management-Microservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backEnd/microservices/University-Management-Microservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/backEnd/microservices/candidat/src/main/java" charset="UTF-8" />
   </component>
 </project>
