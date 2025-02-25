@@ -18,6 +18,7 @@
         </processorPath>
         <module name="Foyer-Bloc-Management-Microservice" />
         <module name="Student-Management-Microservice" />
+        <module name="University-Management-Microservice" />
       </profile>
     </annotationProcessing>
   </component>
@@ -25,6 +26,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Foyer-Bloc-Management-Microservice" options="-parameters" />
       <module name="Student-Management-Microservice" options="-parameters" />
+      <module name="University-Management-Microservice" options="-parameters" />
       <module name="eureka" options="-parameters" />
       <module name="gateway" options="-parameters" />
     </option>
