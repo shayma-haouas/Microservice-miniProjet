@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,9 @@ import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+    private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
+
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
@@ -67,11 +72,18 @@ public class UserServiceImpl implements UserService {
         }
 
         User savedUser = userRepository.save(user);
-        emailService.sendVerificationEmail(savedUser);
 
+        try {
+            emailService.sendVerificationEmail(savedUser);
+            log.info("Email de vérification envoyé à : " + savedUser.getEmail());
+        } catch (Exception e) {
+            log.error("Erreur lors de l'envoi de l'email de vérification : " + e.getMessage());
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Impossible d'envoyer l'email de vérification.");
+        }
+
+        log.info("Utilisateur enregistré avec succès : " + savedUser.getEmail());
         return savedUser;
     }
-
 
     public String login(String email, String password) {
         Optional<User> userOptional = userRepository.findByEmail(email);

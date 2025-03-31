@@ -7,5 +7,6 @@ public enum Role {
     TUTEUR_ACADEMIQUE,// Rôle Tuteur académique
     RESPONSABLE_ENTREPRISE,        // Rôle Entreprise
 
-    RESPONSABLE_STAGE_ESPRIT
+    RESPONSABLE_STAGE_ESPRIT,
+    ROLE_ADMIN
 }
