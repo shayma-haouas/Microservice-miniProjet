@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/backEnd/microservices/Reclamation-Response-Management-Microservice/pom.xml" />
         <option value="$PROJECT_DIR$/backEnd/microservices/Reservation-Management-Microservice/pom.xml" />
         <option value="$PROJECT_DIR$/backEnd/microservices/Room-Chambre-Management-Microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/configServ/pom.xml" />
       </list>
     </option>
   </component>

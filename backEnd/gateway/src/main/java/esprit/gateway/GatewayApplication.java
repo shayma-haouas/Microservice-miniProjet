@@ -17,10 +17,10 @@ public class GatewayApplication {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("candidat",
-                        r->r.path("/candidats/**")
-                        .uri("lb://candidat")).
-                build();
-     }
+                .route("chambre", r -> r
+                        .path("/chambre/**") //name of path in controller
+                        .uri("lb://Room-Chambre-Management-Microservice")) //(lb is for load balancer) name of the app in app props
+                .build();
+    }
 
 }

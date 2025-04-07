@@ -7,9 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="candidat" />
         <module name="eureka" />
         <module name="gateway" />
-        <module name="candidat" />
+        <module name="configServ" />
       </profile>
       <profile name="Annotation profile for Room-Chambre-Management-Microservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -36,6 +37,7 @@
       <module name="Student-Management-Microservice" options="-parameters" />
       <module name="University-Management-Microservice" options="-parameters" />
       <module name="candidat" options="-parameters" />
+      <module name="configServ" options="-parameters" />
       <module name="eureka" options="-parameters" />
       <module name="gateway" options="-parameters" />
     </option>
