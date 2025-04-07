@@ -49,6 +49,8 @@ public class EmailService {
         String resetLink = "http://localhost:4200/reset-password/:token=" + token;
 
         SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("azizchahlaoui7@gmail.com"); // <-- IMPORTANT
+
         message.setTo(user.getEmail());
         message.setSubject("Réinitialisation de votre mot de passe");
         message.setText("Cliquez sur le lien suivant pour réinitialiser votre mot de passe : " + resetLink);

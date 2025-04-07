@@ -1,5 +1,7 @@
 package esprit.gateway.Security;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
 import org.springframework.security.core.userdetails.User;
@@ -12,6 +14,7 @@ import reactor.core.publisher.Mono;
 @Service
 public class CustomUserDetailsService implements ReactiveUserDetailsService {
 
+    private static final Logger log = LoggerFactory.getLogger(CustomUserDetailsService.class);
     private final WebClient userWebClient;
 
     public CustomUserDetailsService(WebClient.Builder webClientBuilder) {
@@ -20,16 +23,20 @@ public class CustomUserDetailsService implements ReactiveUserDetailsService {
 
     @Override
     public Mono<UserDetails> findByUsername(String username) {
+        log.info("Attempting to find user by email: {}", username); // Example logging
+
         return userWebClient.get()
-                .uri("/api/users/by-email?email={email}", username)
+                .uri("/api/auth/by-email?email={email}", username)
                 .header("Authorization", "Bearer {token}") // Le token sera injecté dynamiquement
                 .retrieve()
                 .bodyToMono(UserDTO.class)
-                .map(userDTO ->
-                        User.withUsername(userDTO.getEmail())
-                                .password(userDTO.getPassword())
-                                .roles(userDTO.getRoles().toArray(new String[0]))
-                                .build()
-                );
+                .map(userDTO -> {
+                    log.info("User found: {}", userDTO.getEmail()); // Another log statement
+                    return User.withUsername(userDTO.getEmail())
+                            .password(userDTO.getPassword())
+                            .roles(userDTO.getRoles().toArray(new String[0]))
+                            .build();
+                });
     }
 }
+

@@ -27,7 +27,7 @@ public class GatewayApplication {
                                 .uri("lb://University-Management-Microservice")) // Nom du service dans Eureka
                 // Route pour le service Student Management
                 .route("student-management",
-                        r -> r.path("/api/auth/**") // Toutes les routes du microservice auth
+                        r -> r.path("/api/auth/**","/api/users/**","/api/pdf/**") // Toutes les routes du microservice auth
                                 .uri("lb://Student-Management-Microservice")) // LoadBalancer vers Eureka
 
 

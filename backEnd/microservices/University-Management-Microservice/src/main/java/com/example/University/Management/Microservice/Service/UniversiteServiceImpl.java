@@ -2,6 +2,7 @@ package com.example.University.Management.Microservice.Service;
 
 
 import com.example.University.Management.Microservice.Entities.Universite;
+import com.example.University.Management.Microservice.Entities.UniversiteDTO;
 import com.example.University.Management.Microservice.Repository.UniversiteRepository;
 import org.springframework.stereotype.Service;
 
@@ -40,4 +41,13 @@ public class UniversiteServiceImpl implements IUniversiteService {
     public void supprimerUniversite(Long id) {
         universiteRepository.deleteById(id);
     }
+
+    @Override
+    public UniversiteDTO findById(Long id) {
+        return universiteRepository.findById(id)
+                .map(universite -> new UniversiteDTO(universite.getIdUniversite(), universite.getNomUniversite(), universite.getAdresse()))
+                .orElse(null);  // Retourne null si l'université n'est pas trouvée
+    }
+
+
 }

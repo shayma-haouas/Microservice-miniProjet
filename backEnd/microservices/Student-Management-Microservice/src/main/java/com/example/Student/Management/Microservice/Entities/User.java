@@ -23,6 +23,17 @@ public class User {
     @Column(nullable = false)
     private String prenom;  // Ajout du champ prenom
 
+    @Column
+    private Long universiteId;
+
+    public Long getUniversiteId() {
+        return universiteId;
+    }
+
+    public void setUniversiteId(Long universiteId) {
+        this.universiteId = universiteId;
+    }
+
     public String getNom() {
         return nom;
     }

@@ -29,14 +29,14 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/users/get").hasRole("ADMIN")  // Autorisation uniquement pour les utilisateurs avec le rôle ADMIN
-                        .requestMatchers("/api/users/accept/{userId}").hasAnyRole("ADMIN", "USER")
-                        .requestMatchers("/api/users/block/{userId}").hasRole("ADMIN")
-                        .requestMatchers("/api/stage/uploadFile").hasRole("ADMIN")
-                        .requestMatchers("/api/stage/lettre/{id}").hasRole("ETUDIANT")
-                        .requestMatchers("/api/stage/getStages").hasRole("ADMIN")
-                        .requestMatchers("/api/users/profile").hasAnyRole("ETUDIANT","ADMIN")
+                        .requestMatchers("/api/auth/**","/api/users/**","/api/pdf/**","/api/chart/**").permitAll()
+//                        .requestMatchers("/api/users/get").hasRole("ADMIN")  // Autorisation uniquement pour les utilisateurs avec le rôle ADMIN
+//                        .requestMatchers("/api/users/accept/{userId}").hasAnyRole("ADMIN", "USER")
+//                        .requestMatchers("/api/users/block/{userId}").hasRole("ADMIN")
+//                        .requestMatchers("/api/stage/uploadFile").hasRole("ADMIN")
+//                        .requestMatchers("/api/stage/lettre/{id}").hasRole("ETUDIANT")
+//                        .requestMatchers("/api/stage/getStages").hasRole("ADMIN")
+//                        .requestMatchers("/api/users/profile").hasAnyRole("ETUDIANT","ADMIN")
 
 
                         // Ajout des règles pour les méthodes de stage
@@ -47,6 +47,9 @@ public class SecurityConfig {
                         .requestMatchers("/api/stages/delete/**").hasRole("ADMIN")
                         .requestMatchers("/api/stages/user/**").hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/api/stages/upload/journal/**").hasRole("ADMIN")*/
+
+                        .requestMatchers("/api/auth/by-email").authenticated()
+                        .requestMatchers("/universites/**").authenticated()
 
 
 

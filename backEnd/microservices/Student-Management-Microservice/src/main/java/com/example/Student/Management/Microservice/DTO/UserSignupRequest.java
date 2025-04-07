@@ -11,6 +11,16 @@ public class UserSignupRequest {
     private String password;
     private List<String> competences; // Liste des compétences
 
+    private Long universiteId;
+
+    public Long getUniversiteId() {
+        return universiteId;
+    }
+
+    public void setUniversiteId(Long universiteId) {
+        this.universiteId = universiteId;
+    }
+
     public String getNom() {
         return nom;
     }

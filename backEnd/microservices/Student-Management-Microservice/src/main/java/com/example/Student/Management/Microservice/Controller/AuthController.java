@@ -2,11 +2,11 @@ package com.example.Student.Management.Microservice.Controller;
 
 
 
-import com.example.Student.Management.Microservice.DTO.LoginRequest;
-import com.example.Student.Management.Microservice.DTO.UserSignupRequest;
+import com.example.Student.Management.Microservice.DTO.*;
 import com.example.Student.Management.Microservice.Entities.User;
 import com.example.Student.Management.Microservice.Interface.UserService;
 import com.example.Student.Management.Microservice.Repository.UserRepository;
+import com.example.Student.Management.Microservice.Service.UserUniversityService;
 import com.example.Student.Management.Microservice.ServiceAPI.EmailService;
 import com.example.Student.Management.Microservice.ServiceAPI.JwtService;
 import org.springframework.http.HttpStatus;
@@ -27,17 +27,18 @@ public class AuthController {
     private final EmailService emailService;
     private final JwtService jwtService;
     private final PasswordEncoder passwordEncoder;  // Ajout de l'injection de PasswordEncoder
+    private final UserUniversityService userUniversityService;
 
 
 
 
-
-    public AuthController(UserService userService, UserRepository userRepository, EmailService emailService, JwtService jwtService, PasswordEncoder passwordEncoder) {
+    public AuthController(UserService userService, UserRepository userRepository, EmailService emailService, JwtService jwtService, PasswordEncoder passwordEncoder, UserUniversityService userUniversityService) {
         this.userService = userService;
         this.userRepository = userRepository;
         this.emailService = emailService;
         this.jwtService = jwtService;
         this.passwordEncoder = passwordEncoder;
+        this.userUniversityService = userUniversityService;
     }
 
     // Endpoint pour l'inscription
@@ -56,6 +57,8 @@ public class AuthController {
         user.setPassword(request.getPassword());
         user.setCompetences(request.getCompetences()); // Ajout des compétences
         user.setRole(request.getRole());
+        user.setUniversiteId(request.getUniversiteId());
+
 
         try {
             User registeredUser = userService.register(user);
@@ -99,6 +102,65 @@ public class AuthController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @GetMapping("/{id}/universite")
+    public ResponseEntity<UniversiteDTO> getUniversiteForUser(@PathVariable Long id) {
+        UniversiteDTO universiteDTO = userUniversityService.getUniversiteOfUser(id);
+        return ResponseEntity.ok(universiteDTO);
+    }
+
+    @GetMapping("/by-email")
+    public ResponseEntity<User> getUserByEmail(@RequestParam String email) {
+        Optional<User> userOpt = userRepository.findByEmail(email);
+        if (userOpt.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(userOpt.get());
+    }
+
+
+    @PostMapping("/forgot-password")
+    public ResponseEntity<?> forgotPassword(@RequestBody ForgotPasswordRequest request) {
+        String email = request.getEmail(); // On récupère l'email de l'objet envoyé
+
+        Optional<User> userOptional = userRepository.findByEmail(email);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            emailService.sendPasswordResetEmail(user); // Envoi de l'email de réinitialisation
+            return ResponseEntity.ok(Collections.singletonMap("message", "Un lien de réinitialisation a été envoyé à votre adresse email."));
+        }
+        return ResponseEntity.badRequest().body(Collections.singletonMap("error", "Aucun utilisateur trouvé avec cet email."));
+    }
+
+
+    @PostMapping("/reset-password")
+    public ResponseEntity<?> resetPassword(@RequestParam String token, @RequestBody PasswordResetRequest request) {
+        String newPassword = request.getNewPassword();
+
+        try {
+            String email = jwtService.extractUsername(token); // Extraction de l'email du token
+            Optional<User> userOptional = userRepository.findByEmail(email);
+
+            if (userOptional.isEmpty()) {
+                return ResponseEntity.badRequest().body("Utilisateur introuvable.");
+            }
+
+            User user = userOptional.get();
+
+            // Vérifier si le token est expiré (ajoute cette méthode dans JwtService si nécessaire)
+            if (jwtService.isTokenExpired(token)) {
+                return ResponseEntity.badRequest().body("Le lien de réinitialisation du mot de passe a expiré.");
+            }
+
+            user.setPassword(passwordEncoder.encode(newPassword)); // Encodage du nouveau mot de passe
+            userRepository.save(user); // Sauvegarde du mot de passe réinitialisé
+
+            return ResponseEntity.ok("Votre mot de passe a été réinitialisé avec succès.");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Token invalide ou erreur interne.");
+        }
+    }
+
 
    /* @PostMapping("/forgot-password")
     public ResponseEntity<?> forgotPassword(@RequestBody ForgotPasswordRequest request) {

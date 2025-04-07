@@ -1,26 +1,20 @@
 package esprit.gateway.Security;
 
-
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-
 import java.util.Date;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class JwtService {
 
-    private static final String SECRET = "5367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A713474375367566B59703373367639792F423F4528482B4D6251655468576D5A71347437";
+    private static final String SECRET = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.VFb0qJ1LRg_4ujbZoRMXnVkUgiuKq5KxWqNdbKq_G9Vvz-S1zZa9LPxtHWKa64zDl2ofkT8F6jBt_K4riU-fPg";
     private static final long EXPIRATION_TIME = 86400000; // 1 jour
-    //private static final long EXPIRATION_TIME = 180000; // 3 minutes
-
-    //private static final long EXPIRATION_TIME = 60000; // 1 minute
 
     // Générer un token JWT
     public String generateToken(UserDetails userDetails) {
@@ -34,8 +28,6 @@ public class JwtService {
                 .signWith(SignatureAlgorithm.HS512, SECRET)
                 .compact();
     }
-
-
 
     // Extraire l'email (ou username) du token
     public String extractUsername(String token) {
@@ -53,8 +45,22 @@ public class JwtService {
         return extractClaims(token).getExpiration().before(new Date());
     }
 
-    // Extraire les claims du token
+    // Extraire les claims du token avec gestion des exceptions
     private Claims extractClaims(String token) {
-        return Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token).getBody();
+        try {
+            return Jwts.parserBuilder()
+                    .setSigningKey(SECRET)
+                    .build()
+                    .parseClaimsJws(token)
+                    .getBody();
+        } catch (MalformedJwtException e) {
+            throw new JwtException("Le JWT est malformé", e);
+        } catch (ExpiredJwtException e) {
+            throw new JwtException("Le JWT a expiré", e);
+        } catch (SignatureException e) {
+            throw new JwtException("La signature du JWT est invalide", e);
+        } catch (Exception e) {
+            throw new JwtException("Erreur lors de l'extraction des claims", e);
+        }
     }
 }
