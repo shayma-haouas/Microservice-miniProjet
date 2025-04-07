@@ -1,6 +1,7 @@
 package com.example.Room.Chambre.Management.Microservice.Controller;
 
 import com.example.Room.Chambre.Management.Microservice.Entities.Chambre;
+import com.example.Room.Chambre.Management.Microservice.Entities.TypeChambre;
 import com.example.Room.Chambre.Management.Microservice.Service.Iservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,7 +11,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/chambre")
 public class RestControllerchambre {
-
 
 
     @Autowired
@@ -26,11 +26,11 @@ public class RestControllerchambre {
     public String getWelcomeMessage() {
         return welcome;
     }
+
     @GetMapping("/all")
     public List<Chambre> getAllChambres() {
         return chambreService.getAllChambres();
     }
-
 
 
     @GetMapping("/retrieve-chambre/{chambre-id}")
@@ -58,5 +58,16 @@ public class RestControllerchambre {
         Chambre chambre = chambreService.modifyChambre(c);
         return chambre;
     }
+//SOME ADVANCED FUNCT
 
+    @GetMapping("/findbytype/{typeChambre}")
+    public List<Chambre> getChambresByType(@PathVariable TypeChambre typeChambre) {
+        return chambreService.getChambresByTypeChambre(typeChambre);
+
+    }
+
+    @GetMapping("/findbynumeroChambre")
+    public List<Chambre> getChambresByNumeroChambreRange(@RequestParam Long startNumero, @RequestParam Long endNumero) {
+        return chambreService.getChambresByNumeroChambreRange(startNumero, endNumero);
+    }
 }

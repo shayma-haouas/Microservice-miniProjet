@@ -1,6 +1,7 @@
 package com.example.Room.Chambre.Management.Microservice.Service;
 
 import com.example.Room.Chambre.Management.Microservice.Entities.Chambre;
+import com.example.Room.Chambre.Management.Microservice.Entities.TypeChambre;
 import com.example.Room.Chambre.Management.Microservice.Repository.ChambreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +47,16 @@ public class ServiceImpl implements Iservice {
         chambreRepository.deleteById(chambreId);
     }
 
+
+    //SOME ADVANCED FUNCTIONS
+    public List<Chambre> getChambresByTypeChambre(TypeChambre typeChambre) {
+        return chambreRepository.findByTypeChambre(typeChambre);
+    }
+
+
+    public List<Chambre> getChambresByNumeroChambreRange(Long startNumero, Long endNumero) {
+        return chambreRepository.findByNumeroChambreBetween(startNumero, endNumero);
+    }
    // public Chambre trouverchambreSelonEtudiant(String cin) {
      //   return chambreRepository.trouverChselonEt(cin);
     //}
