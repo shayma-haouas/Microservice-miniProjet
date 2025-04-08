@@ -1,8 +1,11 @@
+version: '3.8'
+
 services:
+
 
   eureka:
     build: ./eureka
-    image: ddouraid/backend-eureka:latest
+    image: aziz/backend-eureka:latest
     container_name: eureka-server
     ports:
       - "8761:8761"
@@ -11,7 +14,7 @@ services:
 
   gateway:
     build: ./gateway
-    image: ddouraid/backend-gateway:latest
+    image: aziz/backend-gateway:latest
     container_name: gateway-service
     ports:
       - "8065:8065"
@@ -27,16 +30,25 @@ services:
     container_name: config-server
     ports:
       - "8888:8888"
+    depends_on:
+      - eureka
+      - gateway
     networks:
       - microservices-network
 
   student-service:
-    build: ./student-service
+    build: ./microservices/Student-Management-Microservice
     container_name: student-service
+    ports:
+      - "8084:8084"
     depends_on:
       - config-server
+      - eureka
+      - gateway
+
     environment:
-      - SPRING_PROFILES_ACTIVE=docker
+
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
     networks:
       - microservices-network
 
