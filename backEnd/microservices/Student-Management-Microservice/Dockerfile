@@ -1,4 +1,5 @@
-FROM openjdk:17
+FROM eclipse-temurin:17-jdk-alpine
+VOLUME /tmp
 EXPOSE 8084
-ADD target/Student-Management-Microservice-0.0.1-SNAPSHOT.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
+COPY target/Student-Management-Microservice-*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]

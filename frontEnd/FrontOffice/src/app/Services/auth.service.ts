@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // Define the URLs for the API endpoints
-const API_URL = 'http://localhost:8084/api/auth'; // Adaptez l'URL en fonction de votre configuration (URL de votre API)
+const API_URL = 'http://localhost:9090/api/auth'; // Adaptez l'URL en fonction de votre configuration (URL de votre API)
 
 @Injectable({
   providedIn: 'root'
@@ -14,13 +14,15 @@ export class AuthService {
 
   // Méthode pour l'inscription
   signup(userData: any): Observable<any> {
-    return this.http.post(`${API_URL}/signup`, userData);
+    return this.http.post(`${API_URL}/register`, userData, { responseType: 'text' });
   }
+  
 
   // Méthode pour la connexion
   signin(credentials: any): Observable<any> {
-    return this.http.post(`${API_URL}/signin`, credentials);
+    return this.http.post(`${API_URL}/login`, credentials);
   }
+  
 
   // Méthode pour vérifier l'email
   verifyEmail(token: string): Observable<any> {

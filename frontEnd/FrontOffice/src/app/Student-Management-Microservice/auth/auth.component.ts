@@ -45,33 +45,38 @@ export class AuthComponent implements OnInit {
 
   // Méthode pour inscrire l'utilisateur
   signup() {
+    // Vérifier par exemple que les deux mots de passe correspondent avant l'envoi
+    if (this.password !== this.confirmPassword) {
+      console.error('Les mots de passe ne correspondent pas');
+      return;
+    }
+  
     const userData = {
-      nom: this.nom,
-      prenom: this.prenom,
-      email: this.email,
+      username: `${this.prenom}.${this.nom}`,  // par exemple, pour créer un username basé sur prénom et nom
       password: this.password,
-      confirmPassword: this.confirmPassword,
-      competences: [],
-      role: 'ETUDIANT'
+      email: this.email,
+      firstName: this.prenom,
+      lastName: this.nom,
+      role: 'admin'
     };
+    
   
     this.authService.signup(userData).subscribe(
       (response) => {
         console.log('Inscription réussie:', response);
-  
-        // ✅ Appliquer la même transition que "Sign in here"
+        // Transition vers le mode connexion
         this.toggle();
-  
-        // ✅ Optionnel : redirection si besoin, après un petit délai pour laisser l'effet s'appliquer
+        // Eventuellement rediriger l'utilisateur après quelques instants
         setTimeout(() => {
-          this.router.navigate(['/auth']);  // Ou tu peux rester sur place si les deux formulaires sont dans la même page
-        }, 500); // Le délai donne le temps pour que la transition s'affiche
+          this.router.navigate(['/auth']);
+        }, 500);
       },
       (error) => {
         console.error('Erreur lors de l\'inscription:', error);
       }
     );
   }
+  
   
 
   // Méthode pour connecter l'utilisateur
