@@ -1,27 +1,30 @@
 📚 Project Description
-This project is built using a microservices architecture, consisting of two main services:
+This project is based on a Microservices Architecture, composed of two main services:
 
 🔐 Microservice: UserStudent
-This service is responsible for managing users (students) and includes the following key features:
+This microservice handles everything related to user (student) management.
+It includes the following key features:
 
-Authentication: Implemented using two different methods:
+✅ Authentication (Two Methods)
+🔐 Spring Security with JWT (JSON Web Token)
 
-Spring Security with JWT (JSON Web Token)
+🛡️ OAuth 2.0 with Keycloak
 
-OAuth 2.0 using Keycloak
+👥 User Management
+📄 Display and manage the list of users
 
-User Management:
+🔍 Filter users by status:
 
-Display the list of users
+Verified ✅
 
-Filter users based on their status (verified, blocked, etc.)
+Blocked ❌
 
-Generate user-related statistics
+📊 Generate statistics about users (e.g., number of verified/blocked users)
 
-PDF Contract Generation:
-
-Ability to generate a customized contract in PDF format for each user.
+📑 Contract Generation
+🖨️ Generate PDF contracts for users with customizable content
 
 🎉 Microservice: Evenement
-This service handles event-related functionality and is built using a different technology than Spring Boot, demonstrating the interoperability and flexibility of the microservices architecture.
-(e.g., Node.js, Express, or any other – specify here based on your implementation.)
+This microservice is dedicated to managing events and is built with a different technology stack than Spring Boot, showcasing the flexibility of the architecture.
+
+For example: Node.js, Express.js, or any other technology (please specify here if needed).
