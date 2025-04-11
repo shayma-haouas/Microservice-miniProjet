@@ -1,31 +1,27 @@
-# Job Aboard - Microservices Training Project
+📚 Project Description
+This project is built using a microservices architecture, consisting of two main services:
 
-## 📌 About the Project
-**Job Aboard** is an **academic project** designed to help students **master microservices architecture** through a **30-hour hands-on training program**. The project focuses on building a **job listing management system** using a microservices approach.
+🔐 Microservice: UserStudent
+This service is responsible for managing users (students) and includes the following key features:
 
-## 🎯 Main Goal
-The primary objective of this project is to provide students with:  
-✅ A **practical understanding** of microservices concepts.  
-✅ Experience in **service decomposition, inter-service communication, and scalability**.  
-✅ Hands-on training with **modern tools and frameworks** used in microservices development.
+Authentication: Implemented using two different methods:
 
-## 🛠️ Technologies & Concepts
-Throughout the training, students will work with:
-- **Spring Boot / Node.js** (for microservices implementation)
-- **API Gateway & Service Discovery**
-- **Message Brokers (Kafka, RabbitMQ, etc.)**
-- **Containerization (Docker, Kubernetes)**
-- **Database Management (SQL/NoSQL)**
-- **Security with Keycloak (Authentication & Authorization)**
-- **Frontend with Angular Framework**
+Spring Security with JWT (JSON Web Token)
 
-## 📅 Training Duration
-**30 hours** of guided learning and project development.
+OAuth 2.0 using Keycloak
 
-## 🚀 Learning Outcome
-By the end of this training, students will be able to **design, develop, and deploy scalable and secure microservices applications**, preparing them for real-world software architecture challenges.
+User Management:
 
-## 🎓 Acknowledgment
-This project is part of the academic training provided by **ESPRIT School of Engineering**, aiming to equip students with industry-relevant skills in modern software development.
+Display the list of users
 
----  
+Filter users based on their status (verified, blocked, etc.)
+
+Generate user-related statistics
+
+PDF Contract Generation:
+
+Ability to generate a customized contract in PDF format for each user.
+
+🎉 Microservice: Evenement
+This service handles event-related functionality and is built using a different technology than Spring Boot, demonstrating the interoperability and flexibility of the microservices architecture.
+(e.g., Node.js, Express, or any other – specify here based on your implementation.)
