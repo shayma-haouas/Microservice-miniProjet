@@ -1,25 +1,5 @@
 # University Dormitory Management System
 
-## 📌 About the Project
-Our project is a University Dormitory Management System, designed to efficiently manage student accommodations within university dormitories. It provides a structured way to handle room reservations, student information, dormitory capacity, complaints, and administrative tasks. The system ensures a seamless interaction between students and the university administration, improving housing allocation and response to student concerns.
+📌 Microservice Réservation
 
-
-## 🎯 Features
-Student Registration & Management: Store student details, including name, date of birth, and university information.
-Room Reservation System: Allow students to book rooms based on availability.
-Dormitory & Room Management: Manage dormitory (foyer), blocks, and rooms (single, double, triple).
-Complaint & Response Handling: Students can submit complaints, and administrators can provide responses.
-University & Dormitory Integration: Each dormitory is linked to a university for structured housing management.
-
-## 🛠️ Technologies & Concepts
-Throughout the training, students will work with:
-- **Spring Boot / Node.js** (for microservices implementation)
-- **API Gateway & Service Discovery**
-- **Message Brokers (Kafka, RabbitMQ, etc.)**
-- **Containerization (Docker, Kubernetes)**
-- **Database Management (SQL/NoSQL)**
-- **Security with Keycloak (Authentication & Authorization)**
-- **Frontend with Angular Framework**
-
-
----  
+Le microservice Réservation gère le processus de réservation des chambres pour les étudiants dans les foyers universitaires. Chaque réservation est liée à un étudiant (Etudiant) et contient des informations telles que l’année universitaire, la validation de la réservation et un identifiant unique (idReservation). Une réservation est également indirectement liée à une chambre (Chambre), qui fait partie d’un bloc (Bloc) rattaché à un foyer (Foyer) appartenant à une université (Université). Ce microservice permet d’ajouter, modifier et supprimer des réservations. Les entités connectées assurent la cohérence du système, où un étudiant peut effectuer plusieurs réservations, et chaque réservation peut cibler une chambre spécifique selon le type défini dans l’énumération TypeChambre (SIMPLE, DOUBLE, TRIPLE). Ce découplage en microservices permet de mieux gérer les responsabilités et de garantir l’évolutivité du système.
