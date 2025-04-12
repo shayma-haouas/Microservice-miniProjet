@@ -1,25 +1,41 @@
-# University Dormitory Management System
+🛏️ Room Microservice – University Dormitory Management System
+📦 Overview
+This microservice is part of the University Dormitory Management System and is responsible for managing all room-related functionalities. It includes room creation, updates, deletion, retrieval, and categorization by room type (SINGLE, DOUBLE, TRIPLE). It ensures proper mapping of rooms to dormitory blocks and integrates smoothly with other system components.
 
-## 📌 About the Project
-Our project is a University Dormitory Management System, designed to efficiently manage student accommodations within university dormitories. It provides a structured way to handle room reservations, student information, dormitory capacity, complaints, and administrative tasks. The system ensures a seamless interaction between students and the university administration, improving housing allocation and response to student concerns.
+🧩 Responsibilities
+Manage individual Room entities.
 
+Support room types through an enum: SINGLE, DOUBLE, and TRIPLE.
 
-## 🎯 Features
-Student Registration & Management: Store student details, including name, date of birth, and university information.
-Room Reservation System: Allow students to book rooms based on availability.
-Dormitory & Room Management: Manage dormitory (foyer), blocks, and rooms (single, double, triple).
-Complaint & Response Handling: Students can submit complaints, and administrators can provide responses.
-University & Dormitory Integration: Each dormitory is linked to a university for structured housing management.
+Provide endpoints to create, update, delete, and retrieve room details.
 
-## 🛠️ Technologies & Concepts
-Throughout the training, students will work with:
-- **Spring Boot / Node.js** (for microservices implementation)
-- **API Gateway & Service Discovery**
-- **Message Brokers (Kafka, RabbitMQ, etc.)**
-- **Containerization (Docker, Kubernetes)**
-- **Database Management (SQL/NoSQL)**
-- **Security with Keycloak (Authentication & Authorization)**
-- **Frontend with Angular Framework**
+Ensure proper mapping of rooms to dormitory blocks (if applicable).
 
+Support filtering rooms by type or availability.
 
----  
+🧱 Technologies Used
+🔧 Backend (Microservice)
+Spring Boot – Java-based framework for building RESTful APIs
+
+Spring Data JPA / Hibernate – ORM for database operations
+
+MySQL 
+
+Enum class for RoomType definition
+
+Lombok – Simplify boilerplate code
+
+Docker – For containerization (optional)
+
+Eureka (Netflix Service Discovery) – For microservice registration (if applicable)
+
+Spring Cloud Gateway – API Gateway integration (if applicable)
+
+🖥️ Frontend
+Angular – Modern frontend framework for managing the room interface
+
+Angular Services – Communicate with the Room microservice via HTTP
+
+Forms & Components – For room creation, editing, and listing
+
+Material / Bootstrap (optional) – UI styling and responsiveness
