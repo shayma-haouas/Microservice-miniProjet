@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';  // MatButton
 import { MatInputModule } from '@angular/material/input';  // MatInput
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';  // MatFormField
+import {  ChambreMicroserviceComponent } from './chambre-microservice/chambre-microservice.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';  // MatFormFi
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    CalendarComponent
+    CalendarComponent,
+    ChambreMicroserviceComponent
   ],
   imports: [
     BrowserModule,

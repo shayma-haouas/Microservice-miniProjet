@@ -1,5 +1,6 @@
 package com.example.Room.Chambre.Management.Microservice.Entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -17,11 +18,22 @@ public class Chambre {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long idChambre;
+    private  long idChambre;
 
-    long numeroChambre;
+    @Column(nullable = true)
+    private String image;
+
+    private long numeroChambre;
     @Enumerated(EnumType.STRING)
     TypeChambre typeChambre;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public long getIdChambre() {
         return idChambre;

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 @RequestMapping("/chambre")
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:57283"})
 public class RestControllerchambre {
 
 
@@ -19,13 +20,13 @@ public class RestControllerchambre {
 
     //TEST
 
-    @Value("${welcome.message}")
-    private String welcome;
+  //  @Value("${welcome.message}")
+   // private String welcome;
 
-    @GetMapping("/welcome")
-    public String getWelcomeMessage() {
-        return welcome;
-    }
+  //  @GetMapping("/welcome")
+   // public String getWelcomeMessage() {
+       // return welcome;
+   // }
 
     @GetMapping("/all")
     public List<Chambre> getAllChambres() {

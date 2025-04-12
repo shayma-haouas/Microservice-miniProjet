@@ -1,1 +1,39 @@
-<p>chambre-microservice works!</p>
+<main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container">
+        <h2 data-aos="fade-up" data-aos-delay="100">Learning Today,<br>Leading Tomorrow</h2>
+        <p data-aos="fade-up" data-aos-delay="200">We are team of talented designers making websites with Bootstrap</p>
+        <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+          <a href="courses.html" class="btn-get-started">Get Started</a>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section class="rooms section" id="rooms">
+        <div class="container">
+          <h2 class="section-title">Available Rooms</h2>
+          <div class="row">
+            <div class="col-md-4 mb-4" *ngFor="let chambre of chambres">
+              <div class="card h-100 shadow-sm">
+                <img [src]="chambre.image" class="card-img-top" alt="Room Image" *ngIf="chambre.image">
+                <div class="card-body">
+                  <h5 class="card-title">Room {{ chambre.numeroChambre }}</h5>
+                  <p class="card-text">Type: {{ chambre.typeChambre }}</p>
+                  <button class="btn btn-outline-success rounded-pill w-100 mt-3 fw-semibold">
+                    <i class="bi bi-calendar-check-fill me-2"></i> Reserve Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section><!-- /About Section -->
+
+    
