@@ -11,6 +11,10 @@ Dormitory & Room Management: Manage dormitory (foyer), blocks, and rooms (single
 Complaint & Response Handling: Students can submit complaints, and administrators can provide responses.
 University & Dormitory Integration: Each dormitory is linked to a university for structured housing management.
 
+## 📌 class Diagram
+![webDist (3)](https://github.com/user-attachments/assets/487bfdbf-ddaa-4a0e-aec9-d95c6f4af06d)
+
+
 ## 🛠️ Technologies & Concepts
 Throughout the training, students will work with:
 - **Spring Boot / Node.js** (for microservices implementation)
