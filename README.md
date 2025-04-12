@@ -1,6 +1,8 @@
 🛏️ Room Microservice – University Dormitory Management System
+
 📦 Overview
 This microservice is part of the University Dormitory Management System and is responsible for managing all room-related functionalities. It includes room creation, updates, deletion, retrieval, and categorization by room type (SINGLE, DOUBLE, TRIPLE). It ensures proper mapping of rooms to dormitory blocks and integrates smoothly with other system components.
+
 
 🧩 Responsibilities
 Manage individual Room entities.
