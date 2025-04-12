@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/backEnd/microservices/Reservation-Management-Microservice/pom.xml" />
         <option value="$PROJECT_DIR$/backEnd/microservices/Room-Chambre-Management-Microservice/pom.xml" />
         <option value="$PROJECT_DIR$/backEnd/configServ/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/config-server/pom.xml" />
       </list>
     </option>
   </component>
