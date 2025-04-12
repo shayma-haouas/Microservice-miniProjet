@@ -1,46 +1,63 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { jwtDecode } from 'jwt-decode';
 
-// Define the URLs for the API endpoints
-const API_URL = 'http://localhost:9090/api/auth'; // Adaptez l'URL en fonction de votre configuration (URL de votre API)
+const API_URL = 'http://localhost:9090/api/auth';
+
+interface DecodedToken {
+  email: string;
+  // tu peux aussi ajouter d'autres champs ici si tu veux (sub, name, exp, etc.)
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  // Méthode pour l'inscription
+  // Inscription
   signup(userData: any): Observable<any> {
     return this.http.post(`${API_URL}/register`, userData, { responseType: 'text' });
   }
-  
 
-  // Méthode pour la connexion
+  // Connexion
   signin(credentials: any): Observable<any> {
     return this.http.post(`${API_URL}/login`, credentials);
   }
-  
 
-  // Méthode pour vérifier l'email
+  // Vérification de l'email
   verifyEmail(token: string): Observable<any> {
     return this.http.get(`${API_URL}/verify?token=${token}`);
   }
 
-  // Méthode pour stocker le token JWT dans le localStorage
+  // Stockage du token
   setToken(token: string): void {
     localStorage.setItem('authToken', token);
   }
 
-  // Méthode pour récupérer le token JWT depuis le localStorage
+  // Récupération du token
   getToken(): string | null {
     return localStorage.getItem('authToken');
   }
 
-  // Méthode pour supprimer le token JWT du localStorage (déconnexion)
+  // Suppression du token (logout)
   removeToken(): void {
     localStorage.removeItem('authToken');
+  }
+
+  // Décodage du token pour récupérer l'email
+  getUserEmailFromToken(): string | null {
+    const token = this.getToken();
+    if (!token) return null;
+
+    try {
+      const decoded = jwtDecode<DecodedToken>(token);
+      return decoded.email;
+    } catch (error) {
+      console.error('Erreur lors du décodage du token :', error);
+      return null;
+    }
   }
 }

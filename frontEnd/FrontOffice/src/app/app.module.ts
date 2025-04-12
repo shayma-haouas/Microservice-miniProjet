@@ -14,7 +14,9 @@ import { PlanningDialogComponent } from './planning-dialog/planning-dialog.compo
 import { MatButtonModule } from '@angular/material/button';  // MatButton
 import { MatInputModule } from '@angular/material/input';  // MatInput
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';  // MatFormField
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { AddEventComponent } from './components/add-event/add-event.component';
+import { EventListComponent } from './components/event-list/event-list.component';  // MatFormField
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';  // MatFormFi
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    CalendarComponent
+    CalendarComponent,
+    AddEventComponent,
+    EventListComponent
   ],
   imports: [
     BrowserModule,

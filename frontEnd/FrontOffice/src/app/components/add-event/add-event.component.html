@@ -1,0 +1,28 @@
+<div class="add-event-container">
+    <h2>Ajouter un événement</h2>
+  
+    <form (ngSubmit)="onSubmit()" class="event-form">
+      <div class="form-group">
+        <label for="titre">Titre :</label>
+        <input type="text" id="titre" [(ngModel)]="event.titre" name="titre" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description :</label>
+        <textarea id="description" [(ngModel)]="event.description" name="description" required></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="dateDebut">Date de début :</label>
+        <input type="date" id="dateDebut" [(ngModel)]="event.dateDebut" name="dateDebut" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="dateFin">Date de fin :</label>
+        <input type="date" id="dateFin" [(ngModel)]="event.dateFin" name="dateFin" required>
+      </div>
+  
+      <button type="submit">Ajouter</button>
+    </form>
+  </div>
+  
