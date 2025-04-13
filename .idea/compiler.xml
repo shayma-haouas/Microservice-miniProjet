@@ -11,7 +11,7 @@
         <module name="gateway" />
         <module name="candidat" />
       </profile>
-      <profile name="Annotation profile for Student-Management-Microservice" enabled="true">
+      <profile name="Annotation profile for Reclamation-Response-Management-Microservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
