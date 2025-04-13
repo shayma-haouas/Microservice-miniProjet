@@ -1,3 +1,4 @@
+
 # University Dormitory Management System
 
 ## 📌 About the Project
@@ -15,15 +16,22 @@ University & Dormitory Integration: Each dormitory is linked to a university for
 ![webDist (3)](https://github.com/user-attachments/assets/487bfdbf-ddaa-4a0e-aec9-d95c6f4af06d)
 
 
-## 🛠️ Technologies & Concepts
-Throughout the training, students will work with:
-- **Spring Boot / Node.js** (for microservices implementation)
-- **API Gateway & Service Discovery**
-- **Message Brokers (Kafka, RabbitMQ, etc.)**
-- **Containerization (Docker, Kubernetes)**
-- **Database Management (SQL/NoSQL)**
-- **Security with Keycloak (Authentication & Authorization)**
-- **Frontend with Angular Framework**
+## 🧱 Technologies Used  
 
+### 🔧 Backend (Microservice)  
 
----  
+- **Spring Boot** – Java-based framework for building RESTful APIs  
+- **Spring Data JPA / Hibernate** – ORM for database operations  
+- **MySQL**  
+- **Enum class** for `RoomType` definition  
+- **Lombok** – Simplify boilerplate code  
+- **Docker** – For containerization 
+- **Eureka (Netflix Service Discovery)** – For microservice registration 
+- **Spring Cloud Gateway** – API Gateway integration 
+
+### 🖥️ Frontend  
+
+- **Angular** – Modern frontend framework for managing the room interface  
+- **Angular Services** – Communicate with the Room microservice via HTTP  
+- **Forms & Components** – For room creation, editing, and listing  
+- **Material / Bootstrap** – UI styling and responsiveness  

@@ -1,0 +1,114 @@
+/* Style global de l'application */
+.demo-app {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Barre latérale */
+  .demo-app-sidebar {
+    width: 300px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+  
+  /* Titre des sections de la barre latérale */
+  .demo-app-sidebar-section h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Liste des instructions et événements */
+  .demo-app-sidebar-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .demo-app-sidebar-section ul li {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Case à cocher dans la barre latérale */
+  .demo-app-sidebar-section label {
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .demo-app-sidebar-section input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  /* Liste des événements */
+  .demo-app-sidebar-section h2 + ul {
+    margin-top: 20px;
+    padding-left: 20px;
+  }
+  
+  .demo-app-sidebar-section li {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Conteneur principal pour le calendrier */
+  .demo-app-main {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* Amélioration de l'apparence du calendrier */
+  full-calendar {
+    width: 100%;
+    max-width: 900px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Styles supplémentaires pour le contenu des événements */
+  ng-template#eventContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  ng-template#eventContent b {
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  
+  ng-template#eventContent i {
+    font-style: italic;
+    color: #333;
+  }
+  
+  /* Responsivité - Assurez-vous que la barre latérale et le calendrier s'ajustent bien sur les petits écrans */
+  @media (max-width: 768px) {
+    .demo-app {
+      flex-direction: column;
+    }
+  
+    .demo-app-sidebar {
+      width: 100%;
+      height: auto;
+      box-shadow: none;
+    }
+  
+    .demo-app-main {
+      width: 100%;
+    }
+  }
+  
