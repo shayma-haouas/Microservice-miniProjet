@@ -8,6 +8,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/reclamations")
+@CrossOrigin(origins = {"*"
+})
 public class ReclamationController {
 
     @Autowired
