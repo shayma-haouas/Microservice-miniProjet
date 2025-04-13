@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 @RequestMapping("/chambre")
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:54395"})
+@CrossOrigin(origins = "*")
 public class RestControllerchambre {
 
 
