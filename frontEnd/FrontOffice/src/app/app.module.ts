@@ -20,11 +20,10 @@ import {  ChambreMicroserviceComponent } from './chambre-microservice/chambre-mi
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { EventListComponent } from './components/event-list/event-list.component';  // MatFormField
-
-
-
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReservationComponent } from './reservation/reservation.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +36,7 @@ import { ReservationComponent } from './reservation/reservation.component';
     ChambreMicroserviceComponent,
 
     AddEventComponent,
-    EventListComponent
+    EventListComponent,
 
     ReservationComponent
   ],

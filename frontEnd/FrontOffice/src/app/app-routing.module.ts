@@ -9,12 +9,12 @@ import {  ChambreMicroserviceComponent } from './chambre-microservice/chambre-mi
 
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { EventListComponent } from './components/event-list/event-list.component';
-import { AuthGuard } from './guards/auth.guard';
+import { ReservationComponent } from './reservation/reservation.component';
 
 
 const routes: Routes = [
   { path: 'auth', component: AuthComponent  },
-  { path: 'home', component: HomeComponent,canActivate: [AuthGuard]  },
+  { path: 'home', component: HomeComponent  },
   { path: 'calendar', component: CalendarComponent },           // ✅ Ajouté
   
   { path: 'Room', component: ChambreMicroserviceComponent },    // ✅ Ajouté
@@ -22,17 +22,9 @@ const routes: Routes = [
   { path: 'planning', component: PlanningDialogComponent },
   { path: 'addevent', component: AddEventComponent },
   { path: 'eventlist', component: EventListComponent }  ,   // ✅ Ajouté
-
-  { path: '**', redirectTo: 'home' }                            // ✅ Route 404 fallback
-import { ReservationComponent } from './reservation/reservation.component';
-const routes: Routes = [
-  { path: 'auth', component: AuthComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'calendar', component: CalendarComponent },           // ✅ Ajouté
-  { path: 'planning', component: PlanningDialogComponent },
   { path: 'reservation', component: ReservationComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },          
-  { path: '**', redirectTo: 'home' },
+
+  
 ];
 
 @NgModule({

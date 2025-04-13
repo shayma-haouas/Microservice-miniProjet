@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:8083/api/auth'; // URL de votre backend
+  //rivate apiUrl = 'http://localhost:8083/api/auth'; // URL de votre backend
 
   private apiUrl = 'http://localhost:8084/api/auth'; // URL de votre backend
   private currentUser: { nom: string, prenom: string, email: string, role: string } | null = null;

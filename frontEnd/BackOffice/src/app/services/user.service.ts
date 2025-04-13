@@ -7,7 +7,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 })
 export class UserService {
 
-  private apiUrl = 'http://localhost:8083/api/users'; // URL de votre API
+  //private apiUrl = 'http://localhost:8083/api/users'; // URL de votre API
   private apiUrl = 'http://localhost:8084/api/users'; // URL de votre API
 
   constructor(private http: HttpClient) { }
