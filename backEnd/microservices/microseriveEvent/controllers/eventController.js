@@ -163,50 +163,63 @@ exports.deleteEvent = (req, res) => {
 };
 
 // Générer un QR Code contenant un lien vers un PDF de l'événement
-exports.generateQRCode = (req, res) => {
-    const { id } = req.params;
-    const query = 'SELECT * FROM Event WHERE id = ?';
-    req.db.execute(query, [id], (err, result) => {
-        if (err) {
-            return res.status(500).json({ error: err.message });
-        }
-        if (result.length === 0) {
-            return res.status(404).json({ message: 'Événement non trouvé' });
-        }
-        const event = result[0];
-        const pdfLink = `http://localhost:3000/events/generate-pdf/${event.id}`;
-        QRCode.toDataURL(pdfLink, (err, qrCodeData) => {
-            if (err) {
-                return res.status(500).json({ error: 'Erreur de génération du QR code' });
-            }
-            res.status(200).json({ message: 'QR Code généré avec succès', qrCodeData });
-        });
-    });
-};
+exports.generateQRCode = async (req, res) => {
+    try {
+      const { id } = req.params;
+      const query = 'SELECT * FROM Event WHERE id = ?';
+      const [result] = await req.db.execute(query, [id]);
+  
+      if (result.length === 0) {
+        return res.status(404).json({ message: 'Événement non trouvé' });
+      }
+  
+      const event = result[0];
+      const pdfLink = `http://localhost:3000/events/generate-pdf/${event.id}`;
+  
+      // Génération du QR Code en utilisant async/await
+      const qrCodeData = await QRCode.toDataURL(pdfLink);
+  
+      res.status(200).json({
+        message: 'QR Code généré avec succès',
+        qrCodeData
+      });
+    } catch (err) {
+      console.error('Erreur lors de la génération du QR Code:', err);
+      res.status(500).json({ error: err.message });
+    }
+  };
+  
 
 // Générer un PDF contenant les informations de l'événement
-exports.generateEventPDF = (req, res) => {
-    const { id } = req.params;
-    const query = 'SELECT * FROM Event WHERE id = ?';
-    req.db.execute(query, [id], (err, result) => {
-        if (err) {
-            return res.status(500).json({ error: err.message });
-        }
-        if (result.length === 0) {
-            return res.status(404).json({ message: 'Événement non trouvé' });
-        }
-        const event = result[0];
-        const doc = new PDFDocument();
-        const filename = `${event.titre.replace(/\s+/g, '_')}.pdf`;
-        res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-        res.setHeader('Content-Type', 'application/pdf');
-        doc.fontSize(18).text('Détails de l\'Événement', { align: 'center' });
-        doc.moveDown();
-        doc.fontSize(12).text(`Titre: ${event.titre}`);
-        doc.text(`Description: ${event.description}`);
-        doc.text(`Date de début: ${event.dateDebut}`);
-        doc.text(`Date de fin: ${event.dateFin}`);
-        doc.pipe(res);
-        doc.end();
-    });
-};
+exports.generateEventPDF = async (req, res) => {
+    try {
+      const { id } = req.params;
+      const query = 'SELECT * FROM Event WHERE id = ?';
+      const [result] = await req.db.execute(query, [id]);
+  
+      if (result.length === 0) {
+        return res.status(404).json({ message: 'Événement non trouvé' });
+      }
+  
+      const event = result[0];
+      const doc = new PDFDocument();
+      const filename = `${event.titre.replace(/\s+/g, '_')}.pdf`;
+      
+      res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+      res.setHeader('Content-Type', 'application/pdf');
+      
+      doc.fontSize(18).text('Détails de l\'Événement', { align: 'center' });
+      doc.moveDown();
+      doc.fontSize(12).text(`Titre: ${event.titre}`);
+      doc.text(`Description: ${event.description}`);
+      doc.text(`Date de début: ${event.dateDebut}`);
+      doc.text(`Date de fin: ${event.dateFin}`);
+      
+      doc.pipe(res);
+      doc.end();
+    } catch (err) {
+      console.error('Erreur dans generateEventPDF:', err);
+      res.status(500).json({ error: err.message });
+    }
+  };
+  

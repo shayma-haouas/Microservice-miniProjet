@@ -54,6 +54,5 @@ export class EventService {
   getEventsByUserEmail(email: string): Observable<Event[]> {
     return this.http.get<Event[]>(`${this.apiUrl}/getbyemail/${email}`);
   }
-  
-  
 }
+ 
