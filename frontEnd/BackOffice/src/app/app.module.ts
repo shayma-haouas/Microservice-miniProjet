@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { ChambreComponent } from './components/chambre/chambre.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
@@ -27,6 +30,8 @@ import { NgChartsModule } from 'ng2-charts';
     RegisterComponent,
     ForgetpasswordComponent,
     ProfileComponent,
+    ChambreComponent
+
   ],
   imports: [
     BrowserModule,
@@ -42,6 +47,7 @@ import { NgChartsModule } from 'ng2-charts';
       closeButton: true, // Ajoute un bouton de fermeture
       preventDuplicates: true, // Évite les messages en double
     }),
+
 
   ],
   providers: [],

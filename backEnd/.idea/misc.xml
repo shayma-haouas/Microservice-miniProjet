@@ -8,6 +8,9 @@
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/microservices/Student-Management-Microservice/pom.xml" />
         <option value="$PROJECT_DIR$/eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/Keycloak/pom.xml" />
+        <option value="$PROJECT_DIR$/microservices/Room-Chambre-Management-Microservice/pom.xml" />
       </list>
     </option>
   </component>

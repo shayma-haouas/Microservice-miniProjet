@@ -14,6 +14,15 @@ import { PlanningDialogComponent } from './planning-dialog/planning-dialog.compo
 import { MatButtonModule } from '@angular/material/button';  // MatButton
 import { MatInputModule } from '@angular/material/input';  // MatInput
 import { MatDialogModule } from '@angular/material/dialog';
+
+import {  ChambreMicroserviceComponent } from './chambre-microservice/chambre-microservice.component';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { AddEventComponent } from './components/add-event/add-event.component';
+import { EventListComponent } from './components/event-list/event-list.component';  // MatFormField
+
+
+
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReservationComponent } from './reservation/reservation.component';
 @NgModule({
@@ -24,6 +33,12 @@ import { ReservationComponent } from './reservation/reservation.component';
     FooterComponent,
     HomeComponent,
     CalendarComponent,
+
+    ChambreMicroserviceComponent,
+
+    AddEventComponent,
+    EventListComponent
+
     ReservationComponent
   ],
   imports: [
@@ -36,6 +51,7 @@ import { ReservationComponent } from './reservation/reservation.component';
     MatButtonModule,
     MatInputModule,
     MatDialogModule,
+
     MatFormFieldModule,
  
   ],

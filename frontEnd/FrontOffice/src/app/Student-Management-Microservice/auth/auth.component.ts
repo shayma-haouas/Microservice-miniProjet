@@ -99,4 +99,12 @@ export class AuthComponent implements OnInit {
       }
     );
   }
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
+  isLoggedIn(): boolean {
+    return this.getToken() !== null;
+  }
+
 }
