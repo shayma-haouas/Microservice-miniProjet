@@ -1,0 +1,60 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Créer une Réservation</h2>
+  <form (ngSubmit)="onSubmit()" #form="ngForm" class="border p-4 rounded shadow-sm bg-light">
+    <div class="mb-3">
+      <label for="studentId" class="form-label">ID Étudiant</label>
+      <input
+        type="number"
+        id="studentId"
+        class="form-control"
+        [(ngModel)]="reservation.studentId"
+        name="studentId"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="date" class="form-label">Date de Réservation</label>
+      <input
+        type="date"
+        id="date"
+        class="form-control"
+        [(ngModel)]="reservation.dateReservation"
+        name="dateReservation"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-success">Réserver</button>
+  </form>
+
+  <hr class="my-5" />
+
+  <h3 class="mb-3 d-flex justify-content-between align-items-center">
+    <span>📦 Réservations</span>
+    <div>
+      <button class="btn btn-outline-primary btn-sm mx-1" (click)="sortByDate()">
+        Trier par date {{ ascendingDate ? '▲' : '▼' }}
+      </button>
+      <button class="btn btn-outline-secondary btn-sm mx-1" (click)="sortByStatus()">
+        Trier par statut {{ ascendingStatus ? '▲' : '▼' }}
+      </button>
+    </div>
+  </h3>
+
+  <div *ngIf="reservations.length === 0" class="alert alert-warning">
+    Aucune réservation trouvée.
+  </div>
+
+  <div class="row">
+    <div *ngFor="let res of reservations" class="col-md-4 mb-4">
+      <div class="card border-success shadow-sm">
+        <div class="card-body bg-success text-white">
+          <h5 class="card-title">Réservation ID: {{ res.id }}</h5>
+          <p class="card-text">🧑 Étudiant ID: {{ res.studentId }}</p>
+          <p class="card-text">📅 Date: {{ res.dateReservation }}</p>
+          <p class="card-text">📌 Statut: {{ res.statut }}</p>
+          <button class="btn btn-danger btn-sm mt-2" (click)="deleteReservation(res.id!)">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<h2>Planifier pour le {{ data.date }}</h2>
+
+<form (ngSubmit)="submit()">
+  <label>Nom:</label>
+  <input [(ngModel)]="nom" name="nom" required />
+
+  <label>Prénom:</label>
+  <input [(ngModel)]="prenom" name="prenom" required />
+
+  <label>Email:</label>
+  <input [(ngModel)]="email" name="email" required />
+
+  <button type="submit">Envoyer</button>
+</form>
