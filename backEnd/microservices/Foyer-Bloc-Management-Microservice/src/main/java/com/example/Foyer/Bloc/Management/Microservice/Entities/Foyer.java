@@ -1,6 +1,7 @@
 package com.example.Foyer.Bloc.Management.Microservice.Entities;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -13,6 +14,7 @@ public class Foyer {
     public Long idFoyer;
     String nomFoyer;
     long capaciteFoyer;
+    @JsonManagedReference
     @OneToMany(mappedBy = "foyer",cascade = CascadeType.ALL)
     List<Bloc> blocs;
 

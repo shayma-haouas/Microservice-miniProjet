@@ -12,9 +12,9 @@ public class Cors {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/miniprojet/**")  // Specific to your API base path
-                        .allowedOrigins("http://localhost:4200")  // Your Angular app
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                registry.addMapping("/**")
+                        .allowedOrigins("http://localhost:4200") // Angular client URL
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allow OPTIONS
                         .allowedHeaders("*")
                         .allowCredentials(true)
                         .maxAge(3600);

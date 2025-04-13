@@ -1,5 +1,7 @@
 package com.example.Foyer.Bloc.Management.Microservice.Entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -10,6 +12,7 @@ public class Bloc {
     long idBloc;
     String nomBloc;
     long capaciteBloc;
+    @JsonBackReference
     @ManyToOne(cascade = CascadeType.ALL)
     Foyer foyer;
 
