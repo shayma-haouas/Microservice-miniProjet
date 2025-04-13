@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReservationService } from 'src/app/Services/reservation.service';
 import { Reservation } from '../models/reservation';
+import { AuthService } from '../Services/auth.service';
 
 @Component({
   selector: 'app-reservation',
@@ -18,13 +19,21 @@ export class ReservationComponent implements OnInit {
   ascendingDate: boolean = true;
   ascendingStatus: boolean = true;
 
-  constructor(private reservationService: ReservationService) {}
-
+  constructor(
+    private reservationService: ReservationService,
+    private authService: AuthService // <-- Injecter ici
+  ) {}
   ngOnInit(): void {
     this.loadReservations();
   }
 
   onSubmit(): void {
+    const username = this.authService.getUserUsernameFromToken(); // Méthode que tu as déjà
+  
+    if (username) {
+      this.reservation.username = username; // <-- Associer le username
+    }
+  
     this.reservationService.createReservation(this.reservation).subscribe({
       next: () => {
         alert('✅ Réservation créée avec succès');
@@ -37,17 +46,26 @@ export class ReservationComponent implements OnInit {
       }
     });
   }
+  
 
   loadReservations(): void {
-    this.reservationService.getAllReservations().subscribe({
+    const username = this.authService.getUserUsernameFromToken(); // ← méthode existante dans AuthService
+  
+    if (!username) {
+      console.error("Nom d'utilisateur non trouvé dans le token.");
+      return;
+    }
+  
+    this.reservationService.getReservationsByUsername(username).subscribe({
       next: (data) => {
         this.reservations = data;
       },
       error: (err) => {
-        console.error('Erreur lors du chargement des réservations', err);
+        console.error('Erreur lors du chargement des réservations par username', err);
       }
     });
   }
+  
 
   deleteReservation(id: number): void {
     if (confirm('Voulez-vous vraiment supprimer cette réservation ?')) {

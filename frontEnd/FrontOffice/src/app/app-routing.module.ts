@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent  },
   { path: 'calendar', component: CalendarComponent },           // ✅ Ajouté
   
-  { path: 'Room', component: ChambreMicroserviceComponent },    // ✅ Ajouté
+  { path: 'room', component: ChambreMicroserviceComponent },    // ✅ Ajouté
 
   { path: 'planning', component: PlanningDialogComponent },
   { path: 'addevent', component: AddEventComponent },

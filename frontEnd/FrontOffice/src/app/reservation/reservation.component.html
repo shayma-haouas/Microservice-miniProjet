@@ -2,9 +2,9 @@
   <h2 class="text-center mb-4">Créer une Réservation</h2>
   <form (ngSubmit)="onSubmit()" #form="ngForm" class="border p-4 rounded shadow-sm bg-light">
     <div class="mb-3">
-      <label for="studentId" class="form-label">ID Étudiant</label>
+      <label for="studentId" class="form-label"></label>
       <input
-        type="number"
+        type="hidden"
         id="studentId"
         class="form-control"
         [(ngModel)]="reservation.studentId"
@@ -12,6 +12,7 @@
         required
       />
     </div>
+    
     <div class="mb-3">
       <label for="date" class="form-label">Date de Réservation</label>
       <input
@@ -49,7 +50,6 @@
       <div class="card border-success shadow-sm">
         <div class="card-body bg-success text-white">
           <h5 class="card-title">Réservation ID: {{ res.id }}</h5>
-          <p class="card-text">🧑 Étudiant ID: {{ res.studentId }}</p>
           <p class="card-text">📅 Date: {{ res.dateReservation }}</p>
           <p class="card-text">📌 Statut: {{ res.statut }}</p>
           <button class="btn btn-danger btn-sm mt-2" (click)="deleteReservation(res.id!)">Supprimer</button>
