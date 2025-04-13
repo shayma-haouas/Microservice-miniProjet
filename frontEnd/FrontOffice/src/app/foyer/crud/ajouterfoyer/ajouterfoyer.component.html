@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Ajouter un Foyer</h2>
+    <form [formGroup]="foyerForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="nomFoyer">Nom du Foyer:</label>
+        <input id="nomFoyer" formControlName="nomFoyer" />
+      </div>
+  
+      <div>
+        <label for="capacite">Capacité:</label>
+        <input type="number" id="capacite" formControlName="capacite" />
+      </div>
+  
+      <button type="submit" [disabled]="foyerForm.invalid">Ajouter</button>
+    </form>
+  </div>
+  

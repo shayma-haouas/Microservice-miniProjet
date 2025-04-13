@@ -1,0 +1,45 @@
+<div class="container">
+    <h2>Ajouter un Bloc</h2>
+  
+    <form (ngSubmit)="ajouterbloc()">
+      <div>
+        <label for="nomBloc">Nom du Bloc:</label>
+        <input
+          id="nomBloc"
+          type="text"
+          name="nomBloc"
+          [(ngModel)]="bloc.nomBloc"
+          required
+        />
+      </div>
+  
+      <div>
+        <label for="capaciteBloc">Capacité:</label>
+        <input
+          id="capaciteBloc"
+          type="number"
+          name="capaciteBloc"
+          [(ngModel)]="bloc.capaciteBloc"
+          required
+        />
+      </div>
+  
+      <div>
+        <label for="foyer">Foyer associé:</label>
+        <select
+          id="foyer"
+          name="foyer"
+          [(ngModel)]="bloc.foyer" 
+          [ngModelOptions]="{ standalone: true }"
+          required
+        >
+          <option *ngFor="let f of foyers" [ngValue]="f">
+            {{ f.nomFoyer }}  <!-- Assuming the 'nomFoyer' property is present -->
+          </option>
+        </select>
+      </div>
+  
+      <button type="submit">Ajouter le Bloc</button>
+    </form>
+  </div>
+  
