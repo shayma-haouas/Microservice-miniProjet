@@ -22,6 +22,9 @@ import { AddEventComponent } from './components/add-event/add-event.component';
 import { EventListComponent } from './components/event-list/event-list.component';  // MatFormField
 
 
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReservationComponent } from './reservation/reservation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,18 +39,20 @@ import { EventListComponent } from './components/event-list/event-list.component
     AddEventComponent,
     EventListComponent
 
+    ReservationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,  // Ensure FormsModule is included for ngModel
+    FormsModule, 
     FullCalendarModule,
     PlanningDialogComponent,
     MatButtonModule,
     MatInputModule,
     MatDialogModule,
-    MatFormFieldModule,  // Add MatFormFieldModule
+
+    MatFormFieldModule,
  
   ],
   providers: [],

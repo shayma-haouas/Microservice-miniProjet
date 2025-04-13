@@ -19,6 +19,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NgChartsModule } from 'ng2-charts';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

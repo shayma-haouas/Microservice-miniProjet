@@ -24,6 +24,15 @@ const routes: Routes = [
   { path: 'eventlist', component: EventListComponent }  ,   // ✅ Ajouté
 
   { path: '**', redirectTo: 'home' }                            // ✅ Route 404 fallback
+import { ReservationComponent } from './reservation/reservation.component';
+const routes: Routes = [
+  { path: 'auth', component: AuthComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'calendar', component: CalendarComponent },           // ✅ Ajouté
+  { path: 'planning', component: PlanningDialogComponent },
+  { path: 'reservation', component: ReservationComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },          
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

@@ -19,7 +19,8 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "backoffice": "file:",
-    "chart.js": "^3.9.1",
+
+    "chart.js": "^4.4.8",
     "ng2-charts": "^3.0.0",
     "ngx-toastr": "^19.0.0",
     "rxjs": "~7.8.0",

@@ -106,4 +106,5 @@ export class AuthComponent implements OnInit {
   isLoggedIn(): boolean {
     return this.getToken() !== null;
   }
+
 }

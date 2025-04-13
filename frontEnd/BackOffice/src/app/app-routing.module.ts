@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ChambreComponent } from './components/chambre/chambre.component';
 
+=======
 import { TableComponent } from './components/table/table.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent,canActivate:[AlreadyAuthGuard]}, // Page d'inscription
   { path:'profile',component:ProfileComponent,canActivate:[AuthGuard]}, // Page de profil
   { path: 'profile/:id', component: ProfileComponent },
+
 
 ];
 
