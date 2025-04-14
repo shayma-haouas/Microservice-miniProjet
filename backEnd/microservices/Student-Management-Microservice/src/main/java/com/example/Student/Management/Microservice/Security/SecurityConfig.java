@@ -46,11 +46,11 @@ public class SecurityConfig {
                         /*.requestMatchers("/api/stages/update/**").hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/api/stages/delete/**").hasRole("ADMIN")
                         .requestMatchers("/api/stages/user/**").hasAnyRole("ADMIN", "USER")
-                        .requestMatchers("/api/stages/upload/journal/**").hasRole("ADMIN")*/
+                        .requestMatchers("/api/stages/upload/journal/**").hasRole("ADMIN")
 
                         .requestMatchers("/api/auth/by-email").authenticated()
                         .requestMatchers("/universites/**").authenticated()
-
+*/
 
 
                         .anyRequest().authenticated()

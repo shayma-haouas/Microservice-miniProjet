@@ -1,0 +1,23 @@
+<div class="center-container">
+    <div class="universite-box">
+      <h2>Université Management</h2>
+  
+      <form (submit)="save()" class="form">
+        <input [(ngModel)]="universite.nomUniversite" name="nom" placeholder="Nom Université" required>
+        <input [(ngModel)]="universite.adresse" name="adresse" placeholder="Adresse" required>
+        <button type="submit">{{ universite.idUniversite ? 'Update' : 'Create' }}</button>
+      </form>
+  
+      <h3>Liste des Universités</h3>
+      <ul class="universite-list">
+        <li *ngFor="let u of universites">
+          <span>{{ u.nomUniversite }} - {{ u.adresse }}</span>
+          <div class="actions">
+            <button (click)="edit(u)">Edit</button>
+            <button (click)="delete(u.idUniversite!)">Delete</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

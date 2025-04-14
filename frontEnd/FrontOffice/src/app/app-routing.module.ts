@@ -18,6 +18,10 @@ import { ReclamationComponent} from './components/reclamations/reclamations.comp
 import { ChambreMicroserviceComponent } from './chambre-microservice/chambre-microservice.component';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { EventListComponent } from './components/event-list/event-list.component';
+import { UniversiteService } from './Services/universite.service';
+import { UniversiteComponent } from './Universite-Microservice/universite.component';
+
+
 const routes: Routes = [
   { path: 'reclamation', component: ReclamationComponent},
   { path: 'auth', component: AuthComponent },
@@ -40,6 +44,8 @@ const routes: Routes = [
   { path: 'addevent', component: AddEventComponent },
   { path: 'eventlist', component: EventListComponent }  ,   // ✅ Ajouté
 
+{ path: 'universites', component: UniversiteComponent },
+  
   
 ];
 

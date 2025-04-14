@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NgChartsModule } from 'ng2-charts';
+import { UniversiteManagementComponent } from './components/universite-management/universite-management.component';
 import { ReclamationsComponent } from './components/reclamations/reclamations.component';
 import { ReponseComponent } from './components/reponse/reponse.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -51,6 +52,8 @@ import { MatButtonModule } from '@angular/material/button';
     RegisterComponent,
     ForgetpasswordComponent,
     ProfileComponent,
+    ChambreComponent,
+    UniversiteManagementComponent,
     ReclamationsComponent,
     ReponseComponent,
     ChambreComponent

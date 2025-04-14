@@ -17,6 +17,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './auth.guard';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AlreadyAuthGuard } from './guards/already-auth.guard';
+import { UniversiteManagementComponent } from './components/universite-management/universite-management.component';
 import { ReclamationsComponent} from './components/reclamations/reclamations.component';
 
 
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent,canActivate:[AlreadyAuthGuard]}, // Page d'inscription
   { path:'profile',component:ProfileComponent,canActivate:[AuthGuard]}, // Page de profil
   { path: 'profile/:id', component: ProfileComponent },
+  { path: 'universite-management', component: UniversiteManagementComponent },
   { path: 'foyer', component: FoyerComponent },
   { path: 'ajouterfoyer', component: AjouterfoyerComponent },
   { path: 'ajouterbloc', component: AjouterblocComponent },

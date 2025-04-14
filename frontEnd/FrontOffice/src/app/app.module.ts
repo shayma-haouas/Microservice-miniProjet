@@ -30,6 +30,7 @@ import {ReclamationComponent } from './components/reclamations/reclamations.comp
 
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { EventListComponent } from './components/event-list/event-list.component';  // MatFormField
+import { UniversiteModule } from './Universite-Microservice/universite.module';
 import { ChambreMicroserviceComponent } from './chambre-microservice/chambre-microservice.component';
 
 
@@ -58,7 +59,7 @@ import { ChambreMicroserviceComponent } from './chambre-microservice/chambre-mic
     AddEventComponent,
     EventListComponent,
 
-    ReservationComponent
+    ReservationComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +74,7 @@ import { ChambreMicroserviceComponent } from './chambre-microservice/chambre-mic
     MatButtonModule,
     MatInputModule,
     MatDialogModule,
+    UniversiteModule,
     MatFormFieldModule,
  
   ],
