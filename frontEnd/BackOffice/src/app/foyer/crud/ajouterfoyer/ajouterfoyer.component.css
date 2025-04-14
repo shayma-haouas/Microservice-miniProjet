@@ -1,0 +1,38 @@
+/* Container Lease for spacing */
+.container-lease {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it's at least the full height of the viewport */
+  background-color: #f8f9fa; /* Optional background color */
+}
+
+/* Main container for form */
+.container {
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+form div {
+  margin-bottom: 15px;
+}
+
+input, button {
+  width: 70%; /* Reduce the width of the input fields */
+  padding: 8px;
+  margin: 0 auto;
+  display: block;
+}
+
+button {
+  width: auto;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* Center the button */
+}

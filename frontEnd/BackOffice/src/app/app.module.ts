@@ -1,13 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { FoyerComponent } from './foyer/foyer.component';
+import { BlocComponent } from './bloc/bloc.component';
+import { AjouterfoyerComponent } from './foyer/crud/ajouterfoyer/ajouterfoyer.component';
+import { ModifierfoyerComponent } from './foyer/crud/modifierfoyer/modifierfoyer.component';
+import { ModifierblocComponent } from './bloc/crud/modifierbloc/modifierbloc.component';
+import { AjouterblocComponent } from './bloc/crud/ajouterbloc/ajouterbloc.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { ChambreComponent } from './components/chambre/chambre.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -28,6 +37,13 @@ import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
+    FoyerComponent,
+    BlocComponent,
+    AjouterfoyerComponent,
+    ModifierfoyerComponent,
+    ModifierblocComponent,
+    AjouterblocComponent,
+    
     TableComponent,
     SidebarComponent,
     HomeComponent,
@@ -48,6 +64,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -59,7 +79,7 @@ import { MatButtonModule } from '@angular/material/button';
       progressBar: true, // Affiche une barre de progression
       closeButton: true, // Ajoute un bouton de fermeture
       preventDuplicates: true, // Évite les messages en double
-    }),
+    })
 
 
   ],
