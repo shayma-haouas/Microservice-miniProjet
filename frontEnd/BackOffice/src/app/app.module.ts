@@ -14,6 +14,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 
+import { ChambreComponent } from './components/chambre/chambre.component';
+
+import { TableComponent } from './components/table/table.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { ProfileComponent } from './components/profile/profile.component';
+import { NgChartsModule } from 'ng2-charts';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +39,15 @@ import { HttpClient } from '@angular/common/http';
     ModifierblocComponent,
     AjouterblocComponent,
     
+    TableComponent,
+    SidebarComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    ForgetpasswordComponent,
+    ProfileComponent,
+    ChambreComponent
+
   ],
   imports: [
     BrowserModule,
@@ -31,7 +55,20 @@ import { HttpClient } from '@angular/common/http';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NgChartsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-center-center', // Centrer le popup
+      timeOut: 3000, // Disparaît après 3 secondes
+      progressBar: true, // Affiche une barre de progression
+      closeButton: true, // Ajoute un bouton de fermeture
+      preventDuplicates: true, // Évite les messages en double
+    })
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

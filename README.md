@@ -1,13 +1,15 @@
-# Job Aboard - Microservices Training Project
+# University Dormitory Management System
 
 ## 📌 About the Project
-**Job Aboard** is an **academic project** designed to help students **master microservices architecture** through a **30-hour hands-on training program**. The project focuses on building a **job listing management system** using a microservices approach.
+Our project is a University Dormitory Management System, designed to efficiently manage student accommodations within university dormitories. It provides a structured way to handle room reservations, student information, dormitory capacity, complaints, and administrative tasks. The system ensures a seamless interaction between students and the university administration, improving housing allocation and response to student concerns.
 
-## 🎯 Main Goal
-The primary objective of this project is to provide students with:  
-✅ A **practical understanding** of microservices concepts.  
-✅ Experience in **service decomposition, inter-service communication, and scalability**.  
-✅ Hands-on training with **modern tools and frameworks** used in microservices development.
+
+## 🎯 Features
+Student Registration & Management: Store student details, including name, date of birth, and university information.
+Room Reservation System: Allow students to book rooms based on availability.
+Dormitory & Room Management: Manage dormitory (foyer), blocks, and rooms (single, double, triple).
+Complaint & Response Handling: Students can submit complaints, and administrators can provide responses.
+University & Dormitory Integration: Each dormitory is linked to a university for structured housing management.
 
 ## 🛠️ Technologies & Concepts
 Throughout the training, students will work with:
@@ -19,13 +21,5 @@ Throughout the training, students will work with:
 - **Security with Keycloak (Authentication & Authorization)**
 - **Frontend with Angular Framework**
 
-## 📅 Training Duration
-**30 hours** of guided learning and project development.
-
-## 🚀 Learning Outcome
-By the end of this training, students will be able to **design, develop, and deploy scalable and secure microservices applications**, preparing them for real-world software architecture challenges.
-
-## 🎓 Acknowledgment
-This project is part of the academic training provided by **ESPRIT School of Engineering**, aiming to equip students with industry-relevant skills in modern software development.
 
 ---  

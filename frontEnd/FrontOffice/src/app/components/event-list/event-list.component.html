@@ -1,0 +1,17 @@
+<h2>Liste des événements</h2>
+<ul *ngIf="events.length > 0">
+  <li *ngFor="let event of events">
+    <strong>{{ event.titre }}</strong>
+    <p>{{ event.description }}</p>
+    <span>{{ event.dateDebut }} à {{ event.dateFin }}</span>
+    <div class="actions">
+      <button (click)="deleteEvent(event.id!)">Supprimer</button>
+      <button (click)="generateQRCode(event.id!)">QR Code</button>
+    </div>
+  </li>
+</ul>
+
+<div *ngIf="qrCodeData" class="qr-container">
+  <h3>QR Code :</h3>
+  <img [src]="qrCodeData" alt="QR Code">
+</div>
