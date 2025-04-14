@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NgChartsModule } from 'ng2-charts';
+import { UniversiteManagementComponent } from './components/universite-management/universite-management.component';
 
 
 
@@ -30,7 +31,8 @@ import { NgChartsModule } from 'ng2-charts';
     RegisterComponent,
     ForgetpasswordComponent,
     ProfileComponent,
-    ChambreComponent
+    ChambreComponent,
+    UniversiteManagementComponent
 
   ],
   imports: [

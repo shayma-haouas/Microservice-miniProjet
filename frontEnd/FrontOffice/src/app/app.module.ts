@@ -21,7 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { EventListComponent } from './components/event-list/event-list.component';  // MatFormField
 import { ReservationComponent } from './reservation/reservation.component';
-
+import { UniversiteModule } from './Universite-Microservice/universite.module';
 
 
 @NgModule({
@@ -38,7 +38,7 @@ import { ReservationComponent } from './reservation/reservation.component';
     AddEventComponent,
     EventListComponent,
 
-    ReservationComponent
+    ReservationComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +50,7 @@ import { ReservationComponent } from './reservation/reservation.component';
     MatButtonModule,
     MatInputModule,
     MatDialogModule,
-
+    UniversiteModule,
     MatFormFieldModule,
  
   ],

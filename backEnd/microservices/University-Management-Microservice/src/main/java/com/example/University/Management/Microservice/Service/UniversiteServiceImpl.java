@@ -1,6 +1,5 @@
 package com.example.University.Management.Microservice.Service;
 
-
 import com.example.University.Management.Microservice.Entities.Universite;
 import com.example.University.Management.Microservice.Entities.UniversiteDTO;
 import com.example.University.Management.Microservice.Repository.UniversiteRepository;

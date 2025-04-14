@@ -10,6 +10,8 @@ import {  ChambreMicroserviceComponent } from './chambre-microservice/chambre-mi
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { EventListComponent } from './components/event-list/event-list.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { UniversiteService } from './Services/universite.service';
+import { UniversiteComponent } from './Universite-Microservice/universite.component';
 
 
 const routes: Routes = [
@@ -24,6 +26,8 @@ const routes: Routes = [
   { path: 'eventlist', component: EventListComponent }  ,   // ✅ Ajouté
   { path: 'reservation', component: ReservationComponent },
 
+{ path: 'universites', component: UniversiteComponent },
+  
   
 ];
 
