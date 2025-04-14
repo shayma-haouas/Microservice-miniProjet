@@ -17,6 +17,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './auth.guard';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AlreadyAuthGuard } from './guards/already-auth.guard';
+import { ReclamationsComponent} from './components/reclamations/reclamations.component';
+
 
 const routes: Routes = [
   { path: 'room', component: ChambreComponent },
@@ -33,6 +35,8 @@ const routes: Routes = [
   {path: 'modifierfoyer/:id', component: ModifierfoyerComponent},
   {path: 'modifierbloc/:id', component: ModifierblocComponent},
   { path: 'blocs', component: BlocComponent },
+  { path: 'reclamation', component: ReclamationsComponent},
+
 
 ];
 

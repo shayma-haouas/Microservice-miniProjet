@@ -12,16 +12,16 @@ import { AjouterfoyerComponent } from './foyer/crud/ajouterfoyer/ajouterfoyer.co
 import { ModifierfoyerComponent } from './foyer/crud/modifierfoyer/modifierfoyer.component';
 import { ModifierblocComponent } from './bloc/crud/modifierbloc/modifierbloc.component';
 import { AjouterblocComponent } from './bloc/crud/ajouterbloc/ajouterbloc.component';
-import {  ChambreMicroserviceComponent } from './chambre-microservice/chambre-microservice.component';
 
+import { ReservationComponent } from './reservation/reservation.component';
+import { ReclamationComponent} from './components/reclamations/reclamations.component';
+import { ChambreMicroserviceComponent } from './chambre-microservice/chambre-microservice.component';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { EventListComponent } from './components/event-list/event-list.component';
-import { ReservationComponent } from './reservation/reservation.component';
-
-
 const routes: Routes = [
-  { path: 'auth', component: AuthComponent  },
-  { path: 'home', component: HomeComponent  },
+  { path: 'reclamation', component: ReclamationComponent},
+  { path: 'auth', component: AuthComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'calendar', component: CalendarComponent },           // ✅ Ajouté
   { path: 'foyer', component: FoyerComponent },
   { path: 'ajouterfoyer', component: AjouterfoyerComponent },
@@ -29,12 +29,16 @@ const routes: Routes = [
   {path: 'modifierfoyer/:id', component: ModifierfoyerComponent},
   {path: 'modifierbloc/:id', component: ModifierblocComponent},
   { path: 'blocs', component: BlocComponent },
+  { path: 'planning', component: PlanningDialogComponent },
+  { path: 'reservation', component: ReservationComponent },
+
+
+  { path: 'home', component: HomeComponent  },
+  
   { path: 'room', component: ChambreMicroserviceComponent },    // ✅ Ajouté
 
-  { path: 'planning', component: PlanningDialogComponent },
   { path: 'addevent', component: AddEventComponent },
   { path: 'eventlist', component: EventListComponent }  ,   // ✅ Ajouté
-  { path: 'reservation', component: ReservationComponent },
 
   
 ];

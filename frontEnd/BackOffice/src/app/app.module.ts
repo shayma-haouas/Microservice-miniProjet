@@ -26,9 +26,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NgChartsModule } from 'ng2-charts';
+import { ReclamationsComponent } from './components/reclamations/reclamations.component';
+import { ReponseComponent } from './components/reponse/reponse.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,10 +51,17 @@ import { NgChartsModule } from 'ng2-charts';
     RegisterComponent,
     ForgetpasswordComponent,
     ProfileComponent,
+    ReclamationsComponent,
+    ReponseComponent,
     ChambreComponent
 
+    
   ],
+ 
   imports: [
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
     BrowserModule,
     AppRoutingModule,
     CommonModule,
@@ -60,6 +72,7 @@ import { NgChartsModule } from 'ng2-charts';
     HttpClientModule,
     BrowserAnimationsModule,
     NgChartsModule,
+    MatDialogModule,
     ToastrModule.forRoot({
       positionClass: 'toast-center-center', // Centrer le popup
       timeOut: 3000, // Disparaît après 3 secondes
