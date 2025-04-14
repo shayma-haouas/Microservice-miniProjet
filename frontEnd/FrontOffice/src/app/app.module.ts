@@ -18,6 +18,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReservationComponent } from './reservation/reservation.component';
 import {ReclamationComponent } from './components/reclamations/reclamations.component';
 
+
+import { AddEventComponent } from './components/add-event/add-event.component';
+import { EventListComponent } from './components/event-list/event-list.component';  // MatFormField
+import { ChambreMicroserviceComponent } from './chambre-microservice/chambre-microservice.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +34,15 @@ import {ReclamationComponent } from './components/reclamations/reclamations.comp
     HomeComponent,
     CalendarComponent,
     ReservationComponent,
-    ReclamationComponent
+    ReclamationComponent,
    
+
+    ChambreMicroserviceComponent,
+
+    AddEventComponent,
+    EventListComponent,
+
+    ReservationComponent
   ],
   imports: [
     BrowserModule,

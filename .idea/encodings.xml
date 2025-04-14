@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/backEnd/config-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backEnd/configServ/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/backEnd/eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/backEnd/gateway/src/main/java" charset="UTF-8" />
+<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$/backEnd/microservices/Reclamation-Response-Management-Microservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/backEnd/microservices/Student-Management-Microservice/src/main/java" charset="UTF-8" />
+=======
+    <file url="file://$PROJECT_DIR$/backEnd/microservices/Foyer-Bloc-Management-Microservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backEnd/microservices/Reclamation-Response-Management-Microservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backEnd/microservices/Reservation-Management-Microservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backEnd/microservices/Room-Chambre-Management-Microservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backEnd/microservices/Student-Management-Microservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backEnd/microservices/University-Management-Microservice/src/main/java" charset="UTF-8" />
+>>>>>>> 74f594d71088653ab861a857bc33da843ee1921e
     <file url="file://$PROJECT_DIR$/backEnd/microservices/candidat/src/main/java" charset="UTF-8" />
   </component>
 </project>

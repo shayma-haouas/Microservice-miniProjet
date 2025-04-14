@@ -3,4 +3,5 @@ export interface Reservation {
   studentId: number;
   dateReservation: string;
   statut: string;
+  username?: string; // ✅ ajoute cette ligne
 }

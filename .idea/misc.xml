@@ -7,8 +7,19 @@
         <option value="$PROJECT_DIR$/backEnd/eureka/pom.xml" />
         <option value="$PROJECT_DIR$/backEnd/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/backEnd/microservices/candidat/pom.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/backEnd/microservices/Reclamation-Response-Management-Microservice/pom.xml" />
         <option value="$PROJECT_DIR$/backEnd/microservices/Student-Management-Microservice/pom.xml" />
+=======
+        <option value="$PROJECT_DIR$/backEnd/microservices/University-Management-Microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/microservices/Student-Management-Microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/microservices/Foyer-Bloc-Management-Microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/microservices/Reclamation-Response-Management-Microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/microservices/Reservation-Management-Microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/microservices/Room-Chambre-Management-Microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/configServ/pom.xml" />
+        <option value="$PROJECT_DIR$/backEnd/config-server/pom.xml" />
+>>>>>>> 74f594d71088653ab861a857bc33da843ee1921e
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />

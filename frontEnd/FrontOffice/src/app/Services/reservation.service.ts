@@ -27,4 +27,8 @@ export class ReservationService {
   deleteReservation(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+  getReservationsByUsername(username: string): Observable<Reservation[]> {
+    return this.http.get<Reservation[]>(`${this.apiUrl}/by-username/${username}`);
+  }
 }

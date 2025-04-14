@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { ChambreComponent } from './components/chambre/chambre.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
@@ -34,8 +37,11 @@ import { MatButtonModule } from '@angular/material/button';
     ProfileComponent,
     ReclamationsComponent,
     ReponseComponent,
+    ChambreComponent
+
     
   ],
+ 
   imports: [
     MatButtonModule,
     MatInputModule,
@@ -54,6 +60,7 @@ import { MatButtonModule } from '@angular/material/button';
       closeButton: true, // Ajoute un bouton de fermeture
       preventDuplicates: true, // Évite les messages en double
     }),
+
 
   ],
   providers: [],
