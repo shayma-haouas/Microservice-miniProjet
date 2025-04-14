@@ -35,6 +35,16 @@
         <module name="University-Management-Microservice" />
         <module name="Student-Management-Microservice" />
       </profile>
+      <profile name="Annotation profile for Reclamation-Response-Management-Microservice" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="Reclamation-Response-Management-Microservice" />
+        <module name="Student-Management-Microservice" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="configServ" target="1.8" />
@@ -42,12 +52,17 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+<<<<<<< HEAD
+      <module name="Reclamation-Response-Management-Microservice" options="-parameters" />
+      <module name="Student-Management-Microservice" options="-parameters" />
+=======
       <module name="Foyer-Bloc-Management-Microservice" options="-parameters" />
       <module name="Reclamation-Response-Management-Microservice" options="-parameters" />
       <module name="Reservation-Management-Microservice" options="-parameters" />
       <module name="Room-Chambre-Management-Microservice" options="-parameters" />
       <module name="Student-Management-Microservice" options="-parameters" />
       <module name="University-Management-Microservice" options="-parameters" />
+>>>>>>> 74f594d71088653ab861a857bc33da843ee1921e
       <module name="candidat" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="configServ" options="-parameters" />

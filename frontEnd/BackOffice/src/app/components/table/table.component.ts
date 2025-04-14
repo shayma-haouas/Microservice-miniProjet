@@ -18,6 +18,7 @@ export class TableComponent implements OnInit {
   sortByStatusOrder: 'asc' | 'desc' = 'asc';
   sortByDateOrder: 'asc' | 'desc' = 'asc';
 
+  // Pie Chart Configuration
   // Configuration du graphique en camembert
   public pieChartOptions: ChartConfiguration<'pie'>['options'] = {
     responsive: true,

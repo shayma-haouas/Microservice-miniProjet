@@ -1,5 +1,9 @@
 {
+<<<<<<<< HEAD:frontEnd/package.json
   "name": "pltaform-stage",
+========
+  "name": "backoffice",
+>>>>>>>> 74f594d71088653ab861a857bc33da843ee1921e:frontEnd/BackOffice/package.json
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -18,8 +22,16 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+<<<<<<<< HEAD:frontEnd/package.json
     "ngx-toastr": "^19.0.0",
     "pltaform-stage": "file:",
+========
+    "backoffice": "file:",
+
+    "chart.js": "^4.4.8",
+    "ng2-charts": "^3.0.0",
+    "ngx-toastr": "^19.0.0",
+>>>>>>>> 74f594d71088653ab861a857bc33da843ee1921e:frontEnd/BackOffice/package.json
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
