@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql2/promise'); // ✅ version PROMISE
 const cors = require('cors');
 const eventRoutes = require('./routes/eventRoutes');
+const Eureka = require('eureka-js-client').Eureka;
+
 
 const app = express();
 const port = 3000;
@@ -19,7 +21,7 @@ app.use(bodyParser.json());
   try {
     // ✅ Création asynchrone de la connexion
     const db = await mysql.createConnection({
-      host: 'host.docker.internal',
+      host: 'localhost',
       user: 'root',
       password: '',
       database: 'eventsDB'
@@ -41,7 +43,42 @@ app.use(bodyParser.json());
 })();
 
 
+const client = new Eureka({
+  // L'URL de ton serveur Eureka
+  eureka: {
+    // L'URL de ton serveur Eureka
+    host: 'localhost', // Change en fonction de ton serveur Eureka
+    port: 8761,
+    servicePath: '/eureka/apps',
+  },
+  instance: {
+    // Le nom du service dans Eureka
+    app: 'EVENT-MICROSERVICE', // Nom de ton microservice
+    hostName: 'localhost', // Ou l'IP de ton serveur
+    ipAddr: '127.0.0.1', // L'IP locale de ton service
+    port: {
+      '$': 3000, // Le port de ton serveur Express
+      '@enabled': 'true'
+    },
+    vipAddress: 'event-service', // Nom de l'API
+    secureVipAddress: 'event-service',
+    statusPageUrl: 'http://localhost:3000/health', // Page de statut de ton service
+    homePageUrl: 'http://localhost:3000',
+    dataCenterInfo: {
+      '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
+      'name': 'MyOwn'
+    }
+  }
+});
 
+// Enregistrer le service auprès d'Eureka
+client.start((error) => {
+  if (error) {
+    console.error('Erreur lors de l\'enregistrement avec Eureka:', error);
+  } else {
+    console.log('Service enregistré avec Eureka.');
+  }
+});
 
 
 /*const express = require('express');
