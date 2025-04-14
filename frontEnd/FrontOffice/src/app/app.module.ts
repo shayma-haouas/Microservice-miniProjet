@@ -15,8 +15,15 @@ import { MatButtonModule } from '@angular/material/button';  // MatButton
 import { MatInputModule } from '@angular/material/input';  // MatInput
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReservationComponent } from './reservation/reservation.component';
+import {ReclamationComponent } from './components/reclamations/reclamations.component';
+
+
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { EventListComponent } from './components/event-list/event-list.component';  // MatFormField
+import { ChambreMicroserviceComponent } from './chambre-microservice/chambre-microservice.component';
+
+
 
 @NgModule({
   declarations: [
@@ -26,20 +33,28 @@ import { EventListComponent } from './components/event-list/event-list.component
     FooterComponent,
     HomeComponent,
     CalendarComponent,
+    ReservationComponent,
+    ReclamationComponent,
+   
+
+    ChambreMicroserviceComponent,
+
     AddEventComponent,
-    EventListComponent
+    EventListComponent,
+
+    ReservationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,  // Ensure FormsModule is included for ngModel
+    FormsModule, 
     FullCalendarModule,
     PlanningDialogComponent,
     MatButtonModule,
     MatInputModule,
     MatDialogModule,
-    MatFormFieldModule,  // Add MatFormFieldModule
+    MatFormFieldModule,
  
   ],
   providers: [],

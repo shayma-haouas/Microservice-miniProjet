@@ -6,6 +6,8 @@
     <file url="file://$PROJECT_DIR$/eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/Foyer-Bloc-Management-Microservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/Reservation-Management-Microservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices/Room-Chambre-Management-Microservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/Student-Management-Microservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/Student-Management-Microservice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservices/University-Management-Microservice/src/main/java" charset="UTF-8" />

@@ -5,8 +5,8 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>3.2.5</version> <!-- au lieu de 3.4.3 -->
+		<relativePath/>
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>Keycloak</artifactId>
@@ -89,6 +89,7 @@
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
 				<version>${spring-cloud.version}</version>
+				<version>2023.0.1</version> <!-- compatible avec Spring Boot 3.2.x -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

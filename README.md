@@ -1,30 +1,25 @@
-📚 Project Description
-This project is based on a Microservices Architecture, composed of two main services:
+# University Dormitory Management System
 
-🔐 Microservice: UserStudent
-This microservice handles everything related to user (student) management.
-It includes the following key features:
+## 📌 About the Project
+Our project is a University Dormitory Management System, designed to efficiently manage student accommodations within university dormitories. It provides a structured way to handle room reservations, student information, dormitory capacity, complaints, and administrative tasks. The system ensures a seamless interaction between students and the university administration, improving housing allocation and response to student concerns.
 
-✅ Authentication (Two Methods)
-🔐 Spring Security with JWT (JSON Web Token)
 
-🛡️ OAuth 2.0 with Keycloak
+## 🎯 Features
+Student Registration & Management: Store student details, including name, date of birth, and university information.
+Room Reservation System: Allow students to book rooms based on availability.
+Dormitory & Room Management: Manage dormitory (foyer), blocks, and rooms (single, double, triple).
+Complaint & Response Handling: Students can submit complaints, and administrators can provide responses.
+University & Dormitory Integration: Each dormitory is linked to a university for structured housing management.
 
-👥 User Management
-📄 Display and manage the list of users
+## 🛠️ Technologies & Concepts
+Throughout the training, students will work with:
+- **Spring Boot / Node.js** (for microservices implementation)
+- **API Gateway & Service Discovery**
+- **Message Brokers (Kafka, RabbitMQ, etc.)**
+- **Containerization (Docker, Kubernetes)**
+- **Database Management (SQL/NoSQL)**
+- **Security with Keycloak (Authentication & Authorization)**
+- **Frontend with Angular Framework**
 
-🔍 Filter users by status:
 
-Verified ✅
-
-Blocked ❌
-
-📊 Generate statistics about users (e.g., number of verified/blocked users)
-
-📑 Contract Generation
-🖨️ Generate PDF contracts for users with customizable content
-
-🎉 Microservice: Evenement
-This microservice is dedicated to managing events and is built with a different technology stack than Spring Boot, showcasing the flexibility of the architecture.
-
-For example: Node.js, Express.js, or any other technology (please specify here if needed).
+---  
