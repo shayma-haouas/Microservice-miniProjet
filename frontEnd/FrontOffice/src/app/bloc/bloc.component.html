@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>Liste des Blocs</h2>
+  
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Nom du Bloc</th>
+          <th>Capacité</th>
+          <th>Foyer</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- If no blocs are found, show the message in one row -->
+        <tr *ngIf="blocs.length === 0">
+          <td colspan="4" class="text-center">Aucun bloc trouvé.</td>
+        </tr>
+  
+        <!-- Loop through blocs -->
+        <tr *ngFor="let bloc of blocs">
+          <td>{{ bloc.nomBloc }}</td>
+          <td>{{ bloc.capaciteBloc }}</td>
+          <td>{{ bloc.foyer?.nomFoyer || 'N/A' }}</td>
+          <td>
+            <!-- Delete and Modify buttons -->
+            <button class="btn btn-danger" (click)="deleteBloc(bloc.idbloc)">Supprimer</button>
+            <button class="btn btn-warning" (click)="editBloc(bloc)">Modifier</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

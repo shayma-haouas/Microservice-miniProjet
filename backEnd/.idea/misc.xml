@@ -11,6 +11,8 @@
         <option value="$PROJECT_DIR$/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/Keycloak/pom.xml" />
         <option value="$PROJECT_DIR$/microservices/Room-Chambre-Management-Microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/microservices/Reservation-Management-Microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/microservices/University-Management-Microservice/pom.xml" />
       </list>
     </option>
   </component>

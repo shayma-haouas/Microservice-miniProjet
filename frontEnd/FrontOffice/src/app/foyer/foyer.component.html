@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Liste des Foyers</h2>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nom du Foyer</th>
+        <th>Capacité</th>
+        <th>Actions</th> <!-- Added Actions column for delete/modify -->
+      </tr>
+    </thead>
+    <tbody>
+      <!-- If no foyers are found, show the message in one row -->
+      <tr *ngIf="foyers.length === 0">
+        <td colspan="3" class="text-center">Aucun foyer trouvé.</td>
+      </tr>
+
+      <!-- Loop through foyers -->
+      <tr *ngFor="let foyer of foyers">
+        <td>{{ foyer.nomFoyer }}</td>
+        <td>{{ foyer.capaciteFoyer }}</td>
+        <td>
+          <!-- Delete and Modify buttons -->
+          <button class="btn btn-danger" (click)="deleteFoyer(foyer.idfoyer)">Supprimer</button>
+          <button class="btn btn-warning" (click)="editFoyer(foyer)">Modifier</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -25,6 +25,9 @@ public class Reservation {
 
     private String statut = "PENDING";
 
+    @Column(name = "username") // ✅ Ajout du champ username
+    private String username;
+
     @PrePersist
     protected void onCreate() {
         dateReservation = LocalDate.now();

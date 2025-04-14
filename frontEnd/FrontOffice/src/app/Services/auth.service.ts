@@ -7,6 +7,7 @@ const API_URL = 'http://localhost:9090/api/auth';
 
 interface DecodedToken {
   email: string;
+  preferred_username?: string;
   // tu peux aussi ajouter d'autres champs ici si tu veux (sub, name, exp, etc.)
 }
 
@@ -82,4 +83,19 @@ export class AuthService {
   }
   // Méthode pour supprimer le token JWT du localStorage (déconnexion)
   
+
+  getUserUsernameFromToken(): string | null {
+    const token = this.getToken();
+    if (!token) return null;
+
+    try {
+      const decoded = jwtDecode<DecodedToken>(token);
+      return decoded.preferred_username ?? null;  // Récupère le nom d'utilisateur
+    } catch (error) {
+      console.error('Erreur lors du décodage du token :', error);
+      return null;
+    }
+  }
+  
+
 }
